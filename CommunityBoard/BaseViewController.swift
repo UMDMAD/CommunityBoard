@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BaseViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       // let
+        self.navigationBar.barTintColor = UIColor(red: 252.0/255, green: 228.0/255, blue: 148.0/255, alpha: 1);
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
