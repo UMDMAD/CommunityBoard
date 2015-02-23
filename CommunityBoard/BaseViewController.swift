@@ -13,7 +13,9 @@ class BaseViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // let
-        self.navigationBar.barTintColor = UIColor(red: 255.0/255, green: 106.0/255, blue: 0/255, alpha: 1);
+        self.navigationBar.barTintColor = UIColor(red: 211.0/255, green: 70.0/255, blue: 74.0/255, alpha: 1);
+        self.navigationBar.tintColor = UIColor(red: 159.0/255, green: 209.0/255, blue: 225.0/255, alpha: 1);
+        self.title = "CommunityBoard";
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

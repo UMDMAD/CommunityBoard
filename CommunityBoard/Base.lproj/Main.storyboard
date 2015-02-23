@@ -44,17 +44,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="edt-mm-sJ0">
                                 <rect key="frame" x="-8" y="122" width="608" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.86235309365354929" green="0.96584191159277955" blue="0.99895833333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postingCell" rowHeight="120" id="iGK-91-jCg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iGK-91-jCg" id="fxL-G9-Ltl">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.62352941179999999" green="0.81960784310000001" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.69514178588089592" green="0.78136022690563556" blue="0.85359817743301392" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97294379340277781" green="0.99265177819865325" blue="0.99895833333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cU3-NV-zcg" firstAttribute="centerX" secondItem="XUU-YY-EZg" secondAttribute="centerX" id="6pI-lR-xoe"/>
                             <constraint firstAttribute="trailing" secondItem="edt-mm-sJ0" secondAttribute="trailing" id="ApL-Qo-USG"/>
