@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mode_control.tintColor = UIColor(red: 219.0/255, green: 29.0/255, blue: 57.0/255, alpha: 1);
+        self.mode_control.tintColor = UIColor(red: 62.0/255, green: 18.0/255, blue: 74.0/255, alpha: 1);
     }
 
     override func didReceiveMemoryWarning() {

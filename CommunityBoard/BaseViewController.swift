@@ -13,7 +13,7 @@ class BaseViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // let
-        self.navigationBar.barTintColor = UIColor(red: 252.0/255, green: 228.0/255, blue: 148.0/255, alpha: 1);
+        self.navigationBar.barTintColor = UIColor(red: 255.0/255, green: 106.0/255, blue: 0/255, alpha: 1);
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
