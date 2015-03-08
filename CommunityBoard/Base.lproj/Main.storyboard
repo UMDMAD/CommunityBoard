@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hDZ-m4-W8E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hDZ-m4-W8E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -40,6 +40,9 @@
                                     <segment title="Map"/>
                                 </segments>
                                 <color key="tintColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="jiT-2g-9Rp" eventType="valueChanged" id="MUd-id-Ii6"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="edt-mm-sJ0">
                                 <rect key="frame" x="-8" y="122" width="608" height="478"/>
@@ -73,6 +76,7 @@
                     <navigationItem key="navigationItem" id="deY-7S-fnf"/>
                     <connections>
                         <outlet property="mode_control" destination="cU3-NV-zcg" id="GU9-MC-RLo"/>
+                        <outlet property="tableView" destination="edt-mm-sJ0" id="lr2-X9-NpB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jk2-dU-yYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
