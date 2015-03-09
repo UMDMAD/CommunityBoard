@@ -59,6 +59,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FXF-sb-qz2">
+                                <rect key="frame" x="0.0" y="122" width="600" height="478"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.97294379340277781" green="0.99265177819865325" blue="0.99895833333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -75,6 +78,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="deY-7S-fnf"/>
                     <connections>
+                        <outlet property="mapView" destination="FXF-sb-qz2" id="dSu-ni-yYU"/>
                         <outlet property="mode_control" destination="cU3-NV-zcg" id="GU9-MC-RLo"/>
                         <outlet property="tableView" destination="edt-mm-sJ0" id="lr2-X9-NpB"/>
                     </connections>

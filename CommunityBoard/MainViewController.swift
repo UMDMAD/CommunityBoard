@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import MapKit
 
 class MainViewController: UIViewController {
     @IBOutlet var mode_control: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mode_control.tintColor = UIColor(red: 211.0/255, green: 70.0/255, blue: 74.0/255, alpha: 1);
+        self.mode_control.tintColor = UIColor(red: 211.0/255, green: 70.0/255, blue: 74.0/255, alpha: 1)
+        mapView.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,9 +29,11 @@ class MainViewController: UIViewController {
         
         if mode_control.selectedSegmentIndex == 0 {
             tableView.hidden = false
+            mapView.hidden = true
         }
         else {
             tableView.hidden = true
+            mapView.hidden = false
         }
     }
     /*
