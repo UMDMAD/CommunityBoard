@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20A595EC440D814DFE6C7B72 /* libPods-CommunityBoard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A58ACBC6F2E9721B9F1DD1F4 /* libPods-CommunityBoard.a */; };
 		BD4F6F601A8BCD8500064EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F5F1A8BCD8500064EA4 /* AppDelegate.swift */; };
 		BD4F6F621A8BCD8500064EA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F611A8BCD8500064EA4 /* BaseViewController.swift */; };
 		BD4F6F651A8BCD8500064EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4F6F631A8BCD8500064EA4 /* Main.storyboard */; };
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F68E8996BA849FDF6502254 /* Pods-CommunityBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityBoard/Pods-CommunityBoard.release.xcconfig"; sourceTree = "<group>"; };
+		A58ACBC6F2E9721B9F1DD1F4 /* libPods-CommunityBoard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommunityBoard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30D5A321AAD538200E8B2C3 /* CommunityBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommunityBoard-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD4F6F5A1A8BCD8400064EA4 /* CommunityBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4F6F5E1A8BCD8500064EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4F6F5F1A8BCD8500064EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,7 @@
 		BD4F6F741A8BCD8600064EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4F6F751A8BCD8600064EA4 /* CommunityBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityBoardTests.swift; sourceTree = "<group>"; };
 		BD4F6F7F1A8BD5DE00064EA4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E061262C91551912AA59179C /* Pods-CommunityBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityBoard/Pods-CommunityBoard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A595EC440D814DFE6C7B72 /* libPods-CommunityBoard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +64,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		154BDB9309BF76C97FB67DEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E061262C91551912AA59179C /* Pods-CommunityBoard.debug.xcconfig */,
+				3F68E8996BA849FDF6502254 /* Pods-CommunityBoard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BD4F6F511A8BCD8400064EA4 = {
 			isa = PBXGroup;
 			children = (
 				BD4F6F5C1A8BCD8400064EA4 /* CommunityBoard */,
 				BD4F6F721A8BCD8600064EA4 /* CommunityBoardTests */,
 				BD4F6F5B1A8BCD8400064EA4 /* Products */,
+				154BDB9309BF76C97FB67DEF /* Pods */,
+				C7397BFFE936F175A40B436C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +103,7 @@
 				BD4F6F661A8BCD8500064EA4 /* Images.xcassets */,
 				BD4F6F681A8BCD8500064EA4 /* LaunchScreen.xib */,
 				BD4F6F5D1A8BCD8500064EA4 /* Supporting Files */,
+				B30D5A321AAD538200E8B2C3 /* CommunityBoard-Bridging-Header.h */,
 			);
 			path = CommunityBoard;
 			sourceTree = "<group>";
@@ -115,6 +133,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C7397BFFE936F175A40B436C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A58ACBC6F2E9721B9F1DD1F4 /* libPods-CommunityBoard.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD4F6F791A8BCD8600064EA4 /* Build configuration list for PBXNativeTarget "CommunityBoard" */;
 			buildPhases = (
+				9D2B05686A4CD924BECD3B0B /* Check Pods Manifest.lock */,
 				BD4F6F561A8BCD8400064EA4 /* Sources */,
 				BD4F6F571A8BCD8400064EA4 /* Frameworks */,
 				BD4F6F581A8BCD8400064EA4 /* Resources */,
+				BA65B03BDCEFD8303A36295E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +237,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D2B05686A4CD924BECD3B0B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA65B03BDCEFD8303A36295E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommunityBoard/Pods-CommunityBoard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD4F6F561A8BCD8400064EA4 /* Sources */ = {
@@ -338,21 +399,28 @@
 		};
 		BD4F6F7A1A8BCD8600064EA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E061262C91551912AA59179C /* Pods-CommunityBoard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CommunityBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CommunityBoard/CommunityBoard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		BD4F6F7B1A8BCD8600064EA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F68E8996BA849FDF6502254 /* Pods-CommunityBoard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CommunityBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CommunityBoard/CommunityBoard-Bridging-Header.h";
 			};
 			name = Release;
 		};
