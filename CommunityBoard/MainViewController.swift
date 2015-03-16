@@ -8,8 +8,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var myRootRef = Firebase(url: "https://shining-heat-5935.firebaseio.com")
+    var locationManager: CLLocationManager!
+    
     @IBOutlet var mode_control: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
@@ -18,6 +23,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.mode_control.tintColor = UIColor(red: 211.0/255, green: 70.0/255, blue: 74.0/255, alpha: 1)
         mapView.hidden = true
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,5 +56,35 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        var userCoordinates: CLLocationCoordinate2D = manager.location.coordinate
+        
+        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error) -> Void in
+        
+            if error != nil {
+                println("Reverse geocoder failed with error" + error.localizedDescription)
+                return
+            }
+            
+            if placemarks.count > 0 {
+                
+                var placemark = placemarks[0] as CLPlacemark
+                    
+                self.locationManager.stopUpdatingLocation()
+                println(placemark.locality)
+                println(placemark.administrativeArea)
+            }
+            else {
+                println("Problem with the data from geocoder")
+            }
+        })
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        
+        println("Error while updating location " + error.localizedDescription)
+    }
 
 }
