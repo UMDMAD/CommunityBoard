@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MainViewController: UIViewController, CLLocationManagerDelegate {//, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {//, UITableViewDelegate, UITableViewDataSource {
     
     var myRootRef = Firebase(url: "https://shining-heat-5935.firebaseio.com")
     var locationManager: CLLocationManager!
@@ -23,6 +23,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {//, UITab
         super.viewDidLoad()
         self.mode_control.tintColor = UIColor(red: 211.0/255, green: 70.0/255, blue: 74.0/255, alpha: 1)
         mapView.hidden = true
+        mapView.delegate = self
+        
         //tableView.delegate = self
         //tableView.dataSource = self
         locationManager = CLLocationManager()
@@ -58,7 +60,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {//, UITab
     /* MARK - CLLocationManagerDelegate */
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        var userCoordinates: CLLocationCoordinate2D = manager.location.coordinate
+        self.locationManager.stopUpdatingLocation()
+        
+        let userCoordinates: CLLocationCoordinate2D = manager.location.coordinate
+        let region = MKCoordinateRegion(center: userCoordinates, span: MKCoordinateSpanMake(0.05, 0.05))
+        mapView.setRegion(region, animated: true)
         
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error) -> Void in
             
@@ -70,10 +76,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {//, UITab
             if placemarks.count > 0 {
                 
                 var placemark = placemarks[0] as CLPlacemark
-                
-                self.locationManager.stopUpdatingLocation()
-                println(placemark.locality)
-                println(placemark.administrativeArea)
+                //println(placemark.locality)
+                //println(placemark.administrativeArea)
             }
             else {
                 println("Problem with the data from geocoder")
