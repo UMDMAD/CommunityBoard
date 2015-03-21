@@ -12,8 +12,9 @@ import CoreLocation
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {//, UITableViewDelegate, UITableViewDataSource {
     
-    var myRootRef = Firebase(url: "https://shining-heat-5935.firebaseio.com")
+    var myRootRef = Firebase(url: "https://shining-heat-5935.firebaseio.com/Communities")
     var locationManager: CLLocationManager!
+    var posts: NSDictionary!
     
     @IBOutlet var mode_control: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -32,6 +33,21 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    /* Set the data of the tableview and mapview */
+    func setData() {
+        
+        //tableview
+    
+        
+        //mapview 
+        for (key, value) in posts {
+            let pin = MKPointAnnotation()
+            pin.coordinate = CLLocationCoordinate2DMake(value.objectForKey("longitude") as Double, value.objectForKey("latitude") as Double)
+            pin.title = value.objectForKey("Name") as String
+            mapView.addAnnotation(pin)
+        }
     }
     
     /* MARK - UITableViewDelegate methods
@@ -75,9 +91,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             
             if placemarks.count > 0 {
                 
-                var placemark = placemarks[0] as CLPlacemark
-                //println(placemark.locality)
-                //println(placemark.administrativeArea)
+                let placemark = placemarks[0] as CLPlacemark
+                
+                let community = placemark.locality + ", " + placemark.administrativeArea
+                self.myRootRef.childByAppendingPath(community).observeSingleEventOfType(.Value, withBlock: { snapshot in
+                    self.posts = snapshot.value as NSDictionary
+                    self.setData()
+                })
             }
             else {
                 println("Problem with the data from geocoder")
