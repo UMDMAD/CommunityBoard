@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20A595EC440D814DFE6C7B72 /* libPods-CommunityBoard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A58ACBC6F2E9721B9F1DD1F4 /* libPods-CommunityBoard.a */; };
+		B3F1F6E21AC769E400D40FD6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */; };
 		BD4F6F601A8BCD8500064EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F5F1A8BCD8500064EA4 /* AppDelegate.swift */; };
 		BD4F6F621A8BCD8500064EA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F611A8BCD8500064EA4 /* BaseViewController.swift */; };
 		BD4F6F651A8BCD8500064EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD4F6F631A8BCD8500064EA4 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		3F68E8996BA849FDF6502254 /* Pods-CommunityBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityBoard/Pods-CommunityBoard.release.xcconfig"; sourceTree = "<group>"; };
 		A58ACBC6F2E9721B9F1DD1F4 /* libPods-CommunityBoard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommunityBoard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30D5A321AAD538200E8B2C3 /* CommunityBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommunityBoard-Bridging-Header.h"; sourceTree = "<group>"; };
+		B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		BD4F6F5A1A8BCD8400064EA4 /* CommunityBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4F6F5E1A8BCD8500064EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4F6F5F1A8BCD8500064EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				BD4F6F5F1A8BCD8500064EA4 /* AppDelegate.swift */,
 				BD4F6F611A8BCD8500064EA4 /* BaseViewController.swift */,
 				BD4F6F7F1A8BD5DE00064EA4 /* MainViewController.swift */,
+				B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */,
 				BD4F6F631A8BCD8500064EA4 /* Main.storyboard */,
 				BD4F6F661A8BCD8500064EA4 /* Images.xcassets */,
 				BD4F6F681A8BCD8500064EA4 /* LaunchScreen.xib */,
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F1F6E21AC769E400D40FD6 /* AddViewController.swift in Sources */,
 				BD4F6F621A8BCD8500064EA4 /* BaseViewController.swift in Sources */,
 				BD4F6F801A8BD5DE00064EA4 /* MainViewController.swift in Sources */,
 				BD4F6F601A8BCD8500064EA4 /* AppDelegate.swift in Sources */,
