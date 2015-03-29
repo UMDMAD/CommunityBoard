@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import CoreLocation
 
 class AddViewController: UIViewController {
+    
+    let myRootRef = Firebase(url: "https://shining-heat-5935.firebaseio.com/Communities")
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var addressField: UITextField!
@@ -19,12 +21,22 @@ class AddViewController: UIViewController {
     
     @IBAction func submitPressed(sender: AnyObject) {
         
-        println(titleField.text)
-        println(addressField.text)
-        println(cityField.text)
-        println(stateField.text)
-        println(descriptionField.text)
+        let address = addressField.text + " " + cityField.text + ", " + stateField.text
+        let community = cityField.text + ", " + stateField.text
         
-        self.navigationController?.popViewControllerAnimated(true)
+        CLGeocoder().geocodeAddressString(address, completionHandler: {(placemarks, error)->Void in
+            if error == nil {
+                
+                let placemark = placemarks[0] as CLPlacemark
+                let longitude = placemark.location.coordinate.longitude
+                let latitude = placemark.location.coordinate.latitude
+                
+                let data = ["Name": self.titleField.text, "Address": self.addressField.text, "Description": self.descriptionField.text, "longitude": longitude, "latitude": latitude]
+                
+                self.myRootRef.childByAppendingPath(community).childByAppendingPath(self.titleField.text).setValue(data)
+                
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        })
     }
 }
