@@ -44,7 +44,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         //mapview 
         for (key, value) in posts {
             let pin = MKPointAnnotation()
-            pin.coordinate = CLLocationCoordinate2DMake(value.objectForKey("longitude") as Double, value.objectForKey("latitude") as Double)
+            pin.coordinate = CLLocationCoordinate2DMake(value.objectForKey("latitude") as Double, value.objectForKey("longitude") as Double)
             pin.title = value.objectForKey("Name") as String
             mapView.addAnnotation(pin)
         }
@@ -123,6 +123,37 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
+    @IBAction func searchButtonClicked(sender: AnyObject) {
+        
+        var inputTextField: UITextField?
+        let searchPrompt = UIAlertController(title: "Search", message: "Search posts in another community", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        searchPrompt.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        searchPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            
+            let community = inputTextField!.text
+            CLGeocoder().geocodeAddressString(community, completionHandler: {(placemarks, error)->Void in
+                if error == nil {
+                    
+                    let placemark = placemarks[0] as CLPlacemark
+                    let region = MKCoordinateRegion(center: placemark.location.coordinate, span: MKCoordinateSpanMake(0.05, 0.05))
+                    self.mapView.setRegion(region, animated: true)
+                    
+                    self.myRootRef.childByAppendingPath(community).observeSingleEventOfType(.Value, withBlock: { snapshot in
+                        self.posts = snapshot.value as NSDictionary
+                        self.setData()
+                    })
+                }
+            })
+        }))
+        
+        searchPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Community"
+            inputTextField = textField
+        })
+        
+        presentViewController(searchPrompt, animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

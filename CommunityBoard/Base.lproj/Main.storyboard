@@ -100,6 +100,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="deY-7S-fnf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="onK-tc-n3m">
+                            <connections>
+                                <action selector="searchButtonClicked:" destination="jiT-2g-9Rp" id="dlk-qs-2e2"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oed-os-ioL">
                             <connections>
                                 <segue destination="4Xz-e6-xbo" kind="show" id="ZHL-Uj-wIe"/>
