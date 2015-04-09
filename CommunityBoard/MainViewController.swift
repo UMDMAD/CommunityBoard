@@ -10,11 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {//, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var myRootRef = Firebase(url: "https://shining-heat-5935.firebaseio.com/Communities")
     var locationManager: CLLocationManager!
     var posts: NSDictionary!
+    var postsKeys: NSArray!
     
     @IBOutlet var mode_control: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -25,9 +26,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         self.mode_control.tintColor = UIColor(red: 211.0/255, green: 70.0/255, blue: 74.0/255, alpha: 1)
         mapView.hidden = true
         mapView.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 119
+        postsKeys = []
         
-        //tableView.delegate = self
-        //tableView.dataSource = self
+        let nib = UINib(nibName: "vwCustomCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "cell")
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -39,7 +45,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     func setData() {
         
         //tableview
-    
+        postsKeys = posts.allKeys
+        tableView.reloadData()
+        tableView.setNeedsDisplay()
         
         //mapview 
         for (key, value) in posts {
@@ -50,28 +58,31 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    /* MARK - UITableViewDelegate methods
-    optional func tableView(_ tableView: UITableView,
-    estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    /* MARK - UITableViewDelegate methods */
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 119
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
     }
-    optional func tableView(_ tableView: UITableView,
-    didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
     
+    /* MARK - UITableViewDataSource methods */
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell: CustomTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as CustomTableViewCell
+        let post = posts.valueForKey(postsKeys[indexPath.row] as String) as NSDictionary
+        cell.titleLabel.text = post.objectForKey("Name") as? String
+        cell.descriptionTextView.text = post.objectForKey("Description") as? String
+        return cell
     }
-    */
     
-    /* MARK - UITableViewDataSource methods
-    func tableView(tableView: UITableView,
-    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return postsKeys.count
     }
     
-    func tableView(tableView: UITableView,
-    numberOfRowsInSection section: Int) -> Int {
-    
-    }
-    */
     
     /* MARK - CLLocationManagerDelegate */
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {

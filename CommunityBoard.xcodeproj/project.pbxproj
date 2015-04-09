@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20A595EC440D814DFE6C7B72 /* libPods-CommunityBoard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A58ACBC6F2E9721B9F1DD1F4 /* libPods-CommunityBoard.a */; };
+		B309B9341AD4D2E4001A8569 /* vwCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B309B9331AD4D2E4001A8569 /* vwCustomCell.xib */; };
+		B309B9361AD4D445001A8569 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309B9351AD4D445001A8569 /* CustomTableViewCell.swift */; };
 		B3F1F6E21AC769E400D40FD6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */; };
 		BD4F6F601A8BCD8500064EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F5F1A8BCD8500064EA4 /* AppDelegate.swift */; };
 		BD4F6F621A8BCD8500064EA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F611A8BCD8500064EA4 /* BaseViewController.swift */; };
@@ -16,7 +18,6 @@
 		BD4F6F6A1A8BCD8500064EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4F6F681A8BCD8500064EA4 /* LaunchScreen.xib */; };
 		BD4F6F761A8BCD8600064EA4 /* CommunityBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F751A8BCD8600064EA4 /* CommunityBoardTests.swift */; };
 		BD4F6F801A8BD5DE00064EA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F7F1A8BD5DE00064EA4 /* MainViewController.swift */; };
-		BDC0A4291AB7626A00F7EBF3 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC0A4281AB7626A00F7EBF3 /* PostTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		3F68E8996BA849FDF6502254 /* Pods-CommunityBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityBoard.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityBoard/Pods-CommunityBoard.release.xcconfig"; sourceTree = "<group>"; };
 		A58ACBC6F2E9721B9F1DD1F4 /* libPods-CommunityBoard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommunityBoard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B309B9331AD4D2E4001A8569 /* vwCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwCustomCell.xib; sourceTree = "<group>"; };
+		B309B9351AD4D445001A8569 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B30D5A321AAD538200E8B2C3 /* CommunityBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommunityBoard-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		BD4F6F5A1A8BCD8400064EA4 /* CommunityBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,8 +48,6 @@
 		BD4F6F741A8BCD8600064EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4F6F751A8BCD8600064EA4 /* CommunityBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityBoardTests.swift; sourceTree = "<group>"; };
 		BD4F6F7F1A8BD5DE00064EA4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		BDC0A4271AB7626A00F7EBF3 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
-		BDC0A4281AB7626A00F7EBF3 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		E061262C91551912AA59179C /* Pods-CommunityBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityBoard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityBoard/Pods-CommunityBoard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,13 +106,13 @@
 				BD4F6F611A8BCD8500064EA4 /* BaseViewController.swift */,
 				BD4F6F7F1A8BD5DE00064EA4 /* MainViewController.swift */,
 				B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */,
+				B309B9331AD4D2E4001A8569 /* vwCustomCell.xib */,
+				B309B9351AD4D445001A8569 /* CustomTableViewCell.swift */,
 				BD4F6F631A8BCD8500064EA4 /* Main.storyboard */,
 				BD4F6F661A8BCD8500064EA4 /* Images.xcassets */,
 				BD4F6F681A8BCD8500064EA4 /* LaunchScreen.xib */,
 				BD4F6F5D1A8BCD8500064EA4 /* Supporting Files */,
 				B30D5A321AAD538200E8B2C3 /* CommunityBoard-Bridging-Header.h */,
-				BDC0A4271AB7626A00F7EBF3 /* PostTableViewCell.h */,
-				BDC0A4281AB7626A00F7EBF3 /* PostTableViewCell.m */,
 			);
 			path = CommunityBoard;
 			sourceTree = "<group>";
@@ -232,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD4F6F651A8BCD8500064EA4 /* Main.storyboard in Resources */,
+				B309B9341AD4D2E4001A8569 /* vwCustomCell.xib in Resources */,
 				BD4F6F6A1A8BCD8500064EA4 /* LaunchScreen.xib in Resources */,
 				BD4F6F671A8BCD8500064EA4 /* Images.xcassets in Resources */,
 			);
@@ -285,10 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F1F6E21AC769E400D40FD6 /* AddViewController.swift in Sources */,
+				B309B9361AD4D445001A8569 /* CustomTableViewCell.swift in Sources */,
 				BD4F6F621A8BCD8500064EA4 /* BaseViewController.swift in Sources */,
 				BD4F6F801A8BD5DE00064EA4 /* MainViewController.swift in Sources */,
 				BD4F6F601A8BCD8500064EA4 /* AppDelegate.swift in Sources */,
-				BDC0A4291AB7626A00F7EBF3 /* PostTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
