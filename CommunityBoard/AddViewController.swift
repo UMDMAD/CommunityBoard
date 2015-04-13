@@ -31,7 +31,7 @@ class AddViewController: UIViewController {
                 let longitude = placemark.location.coordinate.longitude
                 let latitude = placemark.location.coordinate.latitude
                 
-                let data = ["Name": self.titleField.text, "Address": self.addressField.text, "Description": self.descriptionField.text, "longitude": longitude, "latitude": latitude]
+                let data = ["Name": self.titleField.text, "Address": self.addressField.text, "Description": self.descriptionField.text, "longitude": longitude, "latitude": latitude, "City": self.cityField.text, "State": self.stateField.text]
                 
                 self.myRootRef.childByAppendingPath(community).childByAppendingPath(self.titleField.text).setValue(data)
                 

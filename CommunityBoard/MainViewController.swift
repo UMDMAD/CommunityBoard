@@ -51,9 +51,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         //mapview 
         for (key, value) in posts {
-            let pin = MKPointAnnotation()
-            pin.coordinate = CLLocationCoordinate2DMake(value.objectForKey("latitude") as Double, value.objectForKey("longitude") as Double)
+            let pin = PostPinAnnotation()
+            pin.setCoordinate(CLLocationCoordinate2DMake(value.objectForKey("latitude") as Double, value.objectForKey("longitude") as Double))
             pin.title = value.objectForKey("Name") as String
+            pin.post = value as NSDictionary;
             mapView.addAnnotation(pin)
         }
     }
@@ -63,8 +64,22 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         return 119
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
+        let post = posts.valueForKey(postsKeys[indexPath.row] as String) as NSDictionary
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let postViewController = storyboard.instantiateViewControllerWithIdentifier("PostViewController") as PostViewController
+        
+        postViewController.titleText = post.objectForKey("Name") as String
+        postViewController.addressText = post.objectForKey("Address") as String
+        postViewController.cityText = post.objectForKey("City") as String
+        postViewController.stateText = post.objectForKey("State") as String
+        postViewController.descriptionText = post.objectForKey("Description") as String
+        
+        self.navigationController?.pushViewController(postViewController, animated: true)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     
@@ -75,6 +90,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let post = posts.valueForKey(postsKeys[indexPath.row] as String) as NSDictionary
         cell.titleLabel.text = post.objectForKey("Name") as? String
         cell.descriptionTextView.text = post.objectForKey("Description") as? String
+        cell.descriptionTextView.font = UIFont.systemFontOfSize(16)
         return cell
     }
     
@@ -120,6 +136,42 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         
         println("Error while updating location " + error.localizedDescription)
     }
+    
+    /* MARK - MKMapViewDelegate */
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if annotation is PostPinAnnotation {
+            let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myPin")
+            
+            pinAnnotationView.canShowCallout = true
+            pinAnnotationView.animatesDrop = true
+            
+            let infoButton = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
+            
+            pinAnnotationView.rightCalloutAccessoryView = infoButton
+            
+            return pinAnnotationView
+        }
+        
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        
+        if let annotation = view.annotation as? PostPinAnnotation {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let postViewController = storyboard.instantiateViewControllerWithIdentifier("PostViewController") as PostViewController
+            
+            postViewController.titleText = annotation.post.objectForKey("Name") as String
+            postViewController.addressText = annotation.post.objectForKey("Address") as String
+            postViewController.cityText = annotation.post.objectForKey("City") as String
+            postViewController.stateText = annotation.post.objectForKey("State") as String
+            postViewController.descriptionText = annotation.post.objectForKey("Description") as String
+            
+            self.navigationController?.pushViewController(postViewController, animated: true)
+        }
+    }
+
    
     /* MARK - IBActions */
     @IBAction func segmentChanged(sender: UISegmentedControl) {
