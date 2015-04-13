@@ -10,6 +10,8 @@
 		20A595EC440D814DFE6C7B72 /* libPods-CommunityBoard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A58ACBC6F2E9721B9F1DD1F4 /* libPods-CommunityBoard.a */; };
 		B309B9341AD4D2E4001A8569 /* vwCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B309B9331AD4D2E4001A8569 /* vwCustomCell.xib */; };
 		B309B9361AD4D445001A8569 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B309B9351AD4D445001A8569 /* CustomTableViewCell.swift */; };
+		B386A4441ADC786D005882A5 /* PostPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386A4431ADC786D005882A5 /* PostPinAnnotation.swift */; };
+		B3A3DD9A1AD851F90092D43F /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3DD991AD851F90092D43F /* PostViewController.swift */; };
 		B3F1F6E21AC769E400D40FD6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */; };
 		BD4F6F601A8BCD8500064EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F5F1A8BCD8500064EA4 /* AppDelegate.swift */; };
 		BD4F6F621A8BCD8500064EA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F6F611A8BCD8500064EA4 /* BaseViewController.swift */; };
@@ -36,6 +38,8 @@
 		B309B9331AD4D2E4001A8569 /* vwCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = vwCustomCell.xib; sourceTree = "<group>"; };
 		B309B9351AD4D445001A8569 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B30D5A321AAD538200E8B2C3 /* CommunityBoard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommunityBoard-Bridging-Header.h"; sourceTree = "<group>"; };
+		B386A4431ADC786D005882A5 /* PostPinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPinAnnotation.swift; sourceTree = "<group>"; };
+		B3A3DD991AD851F90092D43F /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		BD4F6F5A1A8BCD8400064EA4 /* CommunityBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4F6F5E1A8BCD8500064EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,9 +109,11 @@
 				BD4F6F5F1A8BCD8500064EA4 /* AppDelegate.swift */,
 				BD4F6F611A8BCD8500064EA4 /* BaseViewController.swift */,
 				BD4F6F7F1A8BD5DE00064EA4 /* MainViewController.swift */,
+				B3A3DD991AD851F90092D43F /* PostViewController.swift */,
 				B3F1F6E11AC769E400D40FD6 /* AddViewController.swift */,
-				B309B9331AD4D2E4001A8569 /* vwCustomCell.xib */,
+				B386A4431ADC786D005882A5 /* PostPinAnnotation.swift */,
 				B309B9351AD4D445001A8569 /* CustomTableViewCell.swift */,
+				B309B9331AD4D2E4001A8569 /* vwCustomCell.xib */,
 				BD4F6F631A8BCD8500064EA4 /* Main.storyboard */,
 				BD4F6F661A8BCD8500064EA4 /* Images.xcassets */,
 				BD4F6F681A8BCD8500064EA4 /* LaunchScreen.xib */,
@@ -286,11 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A3DD9A1AD851F90092D43F /* PostViewController.swift in Sources */,
 				B3F1F6E21AC769E400D40FD6 /* AddViewController.swift in Sources */,
 				B309B9361AD4D445001A8569 /* CustomTableViewCell.swift in Sources */,
 				BD4F6F621A8BCD8500064EA4 /* BaseViewController.swift in Sources */,
 				BD4F6F801A8BD5DE00064EA4 /* MainViewController.swift in Sources */,
 				BD4F6F601A8BCD8500064EA4 /* AppDelegate.swift in Sources */,
+				B386A4441ADC786D005882A5 /* PostPinAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
